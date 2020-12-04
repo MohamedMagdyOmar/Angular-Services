@@ -23,6 +23,102 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/Services/data.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/Services/data.service.ts ***!
+  \******************************************/
+/*! exports provided: DataService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _logger_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logger.service */ "./src/app/Services/logger.service.ts");
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data */ "./src/app/data.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DataService = /** @class */ (function () {
+    function DataService(loggerService) {
+        this.loggerService = loggerService;
+        this.mostPopularBook = _data__WEBPACK_IMPORTED_MODULE_2__["allBooks"][0];
+    }
+    DataService.prototype.getAllReaders = function () {
+        return _data__WEBPACK_IMPORTED_MODULE_2__["allReaders"];
+    };
+    DataService.prototype.getReaderById = function (id) {
+        return _data__WEBPACK_IMPORTED_MODULE_2__["allReaders"].find(function (reader) { return reader.readerID === id; });
+    };
+    DataService.prototype.getAllBooks = function () {
+        return _data__WEBPACK_IMPORTED_MODULE_2__["allBooks"];
+    };
+    DataService.prototype.getBookById = function (id) {
+        return _data__WEBPACK_IMPORTED_MODULE_2__["allBooks"].find(function (book) { return book.bookID === id; });
+    };
+    DataService.prototype.setMostPopularBook = function (popularBook) {
+        this.mostPopularBook = popularBook;
+    };
+    DataService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_logger_service__WEBPACK_IMPORTED_MODULE_1__["LoggerService"]])
+    ], DataService);
+    return DataService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/Services/logger.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/Services/logger.service.ts ***!
+  \********************************************/
+/*! exports provided: LoggerService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return LoggerService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var LoggerService = /** @class */ (function () {
+    function LoggerService() {
+    }
+    LoggerService.prototype.log = function (message) {
+        var timeString = new Date().toLocaleTimeString();
+        console.log(message + " (" + timeString + ")");
+    };
+    LoggerService.prototype.error = function (message) {
+        console.error("ERROR: " + message);
+    };
+    LoggerService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])()
+    ], LoggerService);
+    return LoggerService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/add-book/add-book.component.html":
 /*!**************************************************!*\
   !*** ./src/app/add-book/add-book.component.html ***!
@@ -269,12 +365,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
 /* harmony import */ var _edit_book_edit_book_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./edit-book/edit-book.component */ "./src/app/edit-book/edit-book.component.ts");
 /* harmony import */ var _edit_reader_edit_reader_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./edit-reader/edit-reader.component */ "./src/app/edit-reader/edit-reader.component.ts");
+/* harmony import */ var _Services_logger_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Services/logger.service */ "./src/app/Services/logger.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -303,7 +401,7 @@ var AppModule = /** @class */ (function () {
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"]
             ],
-            providers: [],
+            providers: [_Services_logger_service__WEBPACK_IMPORTED_MODULE_10__["LoggerService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
@@ -336,7 +434,8 @@ module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return DashboardComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var app_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! app/data */ "./src/app/data.ts");
+/* harmony import */ var _Services_logger_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Services/logger.service */ "./src/app/Services/logger.service.ts");
+/* harmony import */ var _Services_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Services/data.service */ "./src/app/Services/data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -348,11 +447,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent() {
-        this.allBooks = app_data__WEBPACK_IMPORTED_MODULE_1__["allBooks"];
-        this.allReaders = app_data__WEBPACK_IMPORTED_MODULE_1__["allReaders"];
-        this.mostPopularBook = app_data__WEBPACK_IMPORTED_MODULE_1__["allBooks"][0];
+    function DashboardComponent(loggerService, dataService) {
+        this.loggerService = loggerService;
+        this.dataService = dataService;
+        this.loggerService.log('Creating DashBoard');
+        this.allBooks = this.dataService.getAllBooks();
+        this.allReaders = this.dataService.getAllReaders();
+        this.mostPopularBook = this.dataService.mostPopularBook;
     }
     DashboardComponent.prototype.ngOnInit = function () {
     };
@@ -368,7 +471,8 @@ var DashboardComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./dashboard.component.html */ "./src/app/dashboard/dashboard.component.html"),
             styles: []
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_Services_logger_service__WEBPACK_IMPORTED_MODULE_1__["LoggerService"],
+            _Services_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"]])
     ], DashboardComponent);
     return DashboardComponent;
 }());
@@ -428,7 +532,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditBookComponent", function() { return EditBookComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var app_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/data */ "./src/app/data.ts");
+/* harmony import */ var _Services_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Services/data.service */ "./src/app/Services/data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -442,15 +546,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var EditBookComponent = /** @class */ (function () {
-    function EditBookComponent(route) {
+    function EditBookComponent(route, dataService) {
         this.route = route;
+        this.dataService = dataService;
     }
     EditBookComponent.prototype.ngOnInit = function () {
+        // tslint:disable-next-line:radix
         var bookID = parseInt(this.route.snapshot.params['id']);
-        this.selectedBook = app_data__WEBPACK_IMPORTED_MODULE_2__["allBooks"].find(function (book) { return book.bookID === bookID; });
+        this.selectedBook = this.dataService.getBookById(bookID);
     };
     EditBookComponent.prototype.setMostPopular = function () {
-        console.warn('Setting most popular book not yet implemented.');
+        this.dataService.setMostPopularBook(this.selectedBook);
     };
     EditBookComponent.prototype.saveChanges = function () {
         console.warn('Save changes to book not yet implemented.');
@@ -461,7 +567,8 @@ var EditBookComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./edit-book.component.html */ "./src/app/edit-book/edit-book.component.html"),
             styles: []
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _Services_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"]])
     ], EditBookComponent);
     return EditBookComponent;
 }());
@@ -493,7 +600,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditReaderComponent", function() { return EditReaderComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var app_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/data */ "./src/app/data.ts");
+/* harmony import */ var _Services_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Services/data.service */ "./src/app/Services/data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -507,12 +614,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var EditReaderComponent = /** @class */ (function () {
-    function EditReaderComponent(route) {
+    function EditReaderComponent(route, dataService) {
         this.route = route;
+        this.dataService = dataService;
     }
     EditReaderComponent.prototype.ngOnInit = function () {
+        // tslint:disable-next-line:radix
         var readerID = parseInt(this.route.snapshot.params['id']);
-        this.selectedReader = app_data__WEBPACK_IMPORTED_MODULE_2__["allReaders"].find(function (reader) { return reader.readerID === readerID; });
+        this.selectedReader = this.dataService.getReaderById(readerID);
     };
     EditReaderComponent.prototype.saveChanges = function () {
         console.warn('Save reader not yet implemented.');
@@ -523,7 +632,8 @@ var EditReaderComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./edit-reader.component.html */ "./src/app/edit-reader/edit-reader.component.html"),
             styles: []
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _Services_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"]])
     ], EditReaderComponent);
     return EditReaderComponent;
 }());
@@ -585,7 +695,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Source\booktracker\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\HomeRepo\Angular-Services\BookTracker\src\main.ts */"./src/main.ts");
 
 
 /***/ })

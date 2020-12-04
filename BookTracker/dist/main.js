@@ -51,6 +51,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var DataService = /** @class */ (function () {
     function DataService(loggerService) {
         this.loggerService = loggerService;
+        this.mostPopularBook = _data__WEBPACK_IMPORTED_MODULE_2__["allBooks"][0];
     }
     DataService.prototype.getAllReaders = function () {
         return _data__WEBPACK_IMPORTED_MODULE_2__["allReaders"];
@@ -63,6 +64,9 @@ var DataService = /** @class */ (function () {
     };
     DataService.prototype.getBookById = function (id) {
         return _data__WEBPACK_IMPORTED_MODULE_2__["allBooks"].find(function (book) { return book.bookID === id; });
+    };
+    DataService.prototype.setMostPopularBook = function (popularBook) {
+        this.mostPopularBook = popularBook;
     };
     DataService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -451,7 +455,7 @@ var DashboardComponent = /** @class */ (function () {
         this.loggerService.log('Creating DashBoard');
         this.allBooks = this.dataService.getAllBooks();
         this.allReaders = this.dataService.getAllReaders();
-        this.mostPopularBook = this.allBooks[0];
+        this.mostPopularBook = this.dataService.mostPopularBook;
     }
     DashboardComponent.prototype.ngOnInit = function () {
     };
@@ -552,7 +556,7 @@ var EditBookComponent = /** @class */ (function () {
         this.selectedBook = this.dataService.getBookById(bookID);
     };
     EditBookComponent.prototype.setMostPopular = function () {
-        console.warn('Setting most popular book not yet implemented.');
+        this.dataService.setMostPopularBook(this.selectedBook);
     };
     EditBookComponent.prototype.saveChanges = function () {
         console.warn('Save changes to book not yet implemented.');

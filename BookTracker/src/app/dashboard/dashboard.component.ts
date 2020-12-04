@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
     this.loggerService.log('Creating DashBoard');
     this.allBooks = this.dataService.getAllBooks();
     this.allReaders = this.dataService.getAllReaders();
-    this.mostPopularBook = this.allBooks[0];
+    this.mostPopularBook = this.dataService.mostPopularBook;
   }
 
   ngOnInit() {

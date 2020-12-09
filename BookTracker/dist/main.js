@@ -544,6 +544,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+// @ts-ignore
 
 var EditBookComponent = /** @class */ (function () {
     function EditBookComponent(route, dataService) {

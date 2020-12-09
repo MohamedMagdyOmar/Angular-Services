@@ -9,9 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { EditReaderComponent } from './edit-reader/edit-reader.component';
-import {LoggerService} from './Services/logger.service';
-import { PlainLoggerService } from './Services/plain-logger.service';
-import { DataService } from './Services/data.service';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -25,13 +23,10 @@ import { DataService } from './Services/data.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CoreModule
   ],
-  providers: [
-    // any component that request LoggerService in their constructor, they will get an instance of PlainLoggerService, as both of them has same interface
-    // this is just different way of creating a service, the instructor just show unneeded funtionality for you :), at least now
-    { provide: LoggerService, useClass: PlainLoggerService },
-    DataService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Book } from 'app/models/book';
-import {DataService} from '../Services/data.service';
+import { DataService } from '../core/data.service';
+// @ts-ignore
+
 
 
 @Component({

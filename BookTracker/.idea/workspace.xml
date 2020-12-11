@@ -32,7 +32,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\HomeRepo\Angular-Services\BookTracker\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -73,7 +73,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607114877279</updated>
-      <workItem from="1607114878553" duration="3617000" />
+      <workItem from="1607114878553" duration="4267000" />
+      <workItem from="1607351738977" duration="2516000" />
+      <workItem from="1607544194731" duration="604000" />
     </task>
     <servers />
   </component>
@@ -90,5 +92,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

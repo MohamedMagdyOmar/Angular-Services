@@ -1,7 +1,7 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoggerService } from './logger.service';
-import { DataService } from './data.service';
+import { LoggerService } from 'app/Core/logger.service';
+import { DataService } from 'app/Core/data.service';
 import { PlainLoggerService } from './plain-logger.service';
 import { core } from '@angular/compiler';
 import { throwIfAlreadyLoaded } from './module-import-guard';

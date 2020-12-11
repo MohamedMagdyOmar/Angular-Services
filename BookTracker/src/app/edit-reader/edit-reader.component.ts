@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Reader } from 'app/models/reader';
 
 import { BadgeService } from '../Services/badge.service';
-import { DataService } from '../core/data.service';
+import { DataService } from 'app/Core/data.service';
 
 @Component({
   selector: 'app-edit-reader',
